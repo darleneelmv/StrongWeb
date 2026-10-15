@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#061331">
+  <title>Strong Gym Puruándiro · Tu cuerpo, tu fuerza</title>
+  <meta name="description" content="Strong Gym en Puruándiro, Michoacán. Tu cuerpo, tu fuerza: pesas, cardio, malteadas de proteína y suplementos. Mes $390, estudiantes $350. Abrimos los 7 días.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Strong Gym Puruándiro">
+  <meta property="og:description" content="Pesas, cardio, barra de proteína y un ambiente de comunidad. Conoce planes, productos y promociones.">
+  <meta property="og:image" content="/img/compartir.jpg">
+  <meta property="og:locale" content="es_MX">
+  <link rel="icon" href="/img/icono-192.png">
+  <link rel="apple-touch-icon" href="/img/icono-192.png">
+  <link rel="preload" href="/fonts/big-shoulders.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/css/fuentes.css">
+  <link rel="stylesheet" href="/css/sitio.css">
+</head>
+<body>
+  <div class="progreso" id="progreso" aria-hidden="true"></div>
+  <p class="aviso" id="aviso" hidden></p>
+  <header class="cab">
+    <a class="cab-marca" href="/" aria-label="Inicio">
+      <img src="/img/logo.jpg" alt="" width="46" height="46">
+      <span><b data-nombre>Strong Gym</b><small data-ciudad>Puruándiro</small></span>
+    </a>
+    <nav class="cab-nav" id="nav" aria-label="Secciones">
+      <a href="/">Inicio</a>
+      <a href="/productos" data-si="productos">Productos</a>
+      <a href="/#galeria" data-si="galeria">Galería</a>
+      <a href="/#videos">Videos</a>
+      <a href="/#planes" data-si="planes">Precios</a>
+      <a href="/#promociones" data-si="promociones">Promos</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+    <a class="boton boton-wa boton-chico cab-wa" data-wa href="#contacto">WhatsApp</a>
+    <button class="cab-menu" id="btn-menu" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú"><span></span><span></span></button>
+  </header>
+  <nav class="menu-movil" id="menu-movil" aria-label="Menú" hidden></nav>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="hero-fondo" id="hero-fondo"></div>
+      <div class="hero-vasos" id="hero-vasos" aria-hidden="true"></div>
+      <div class="envoltura hero-cuerpo">
+        <p class="hero-script" id="hero-script">tu cuerpo, tu fuerza</p>
+        <h1 class="hero-titulo" id="hero-titulo"><span class="linea">Strong</span><span class="linea">Gym</span></h1>
+        <div class="hero-insignias" id="hero-insignias"></div>
+        <p class="hero-eslogan" id="hero-eslogan"></p>
+        <div class="hero-acciones">
+          <a class="boton boton-rojo" href="/productos">Ver productos</a>
+          <a class="boton boton-borde" href="#planes">Precios</a>
+        </div>
+      </div>
+      <a class="hero-bajar" href="#nosotros" aria-label="Bajar"><span></span></a>
+    </section>
+    <div id="secciones"></div>
+  </main>
+
+  <footer class="pie" id="pie"></footer>
+
+  <script src="/js/vaso.js"></script>
+  <script src="/js/comun.js"></script>
+  <script src="/js/inicio.js"></script>
+</body>
+</html>

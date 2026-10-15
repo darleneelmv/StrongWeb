@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#061331">
+  <title>Editar página · Strong Gym</title>
+  <link rel="icon" href="/img/icono-192.png">
+  <link rel="stylesheet" href="/css/fuentes.css">
+  <link rel="stylesheet" href="/css/editar.css">
+</head>
+<body>
+  <!-- Entrar -->
+  <main class="entrar" id="entrar" hidden>
+    <form class="entrar-caja" id="form-entrar">
+      <img src="/img/logo.jpg" alt="Strong Gym" width="96" height="78">
+      <h1>Editar la página</h1>
+      <p>Escribe la clave de recepción para cambiar productos, fotos, videos y promociones.</p>
+      <label class="campo"><span>Clave</span><input type="password" name="clave" autocomplete="current-password" required autofocus></label>
+      <p class="error" id="error-entrar" role="alert"></p>
+      <button class="btn btn-rojo btn-ancho" type="submit">Entrar</button>
+      <a class="volver" href="/">← Volver a la página</a>
+    </form>
+  </main>
+
+  <!-- Editor -->
+  <div class="app" id="app" hidden>
+    <header class="barra">
+      <a class="barra-marca" href="/" target="_blank" rel="noopener"><img src="/img/logo.jpg" alt="" width="40" height="32"><span>Editar página</span></a>
+      <a class="btn btn-claro btn-chico" href="/" target="_blank" rel="noopener">Ver página ↗</a>
+      <button class="btn btn-claro btn-chico" type="button" id="salir">Salir</button>
+    </header>
+    <nav class="pestanas" id="pestanas" aria-label="Secciones">
+      <button type="button" data-tab="productos">Productos</button>
+      <button type="button" data-tab="fotos">Fotos del gym</button>
+      <button type="button" data-tab="videos">Videos</button>
+      <button type="button" data-tab="promociones">Promociones</button>
+      <button type="button" data-tab="planes">Planes</button>
+      <button type="button" data-tab="sitio">Información</button>
+      <button type="button" data-tab="clave">Clave</button>
+    </nav>
+    <main class="panel" id="panel"></main>
+  </div>
+
+  <dialog class="dialogo" id="dialogo">
+    <form method="dialog" id="form-dialogo" novalidate>
+      <header><h2 id="dialogo-titulo"></h2><button type="button" class="cerrar" data-cerrar aria-label="Cerrar">×</button></header>
+      <div class="dialogo-cuerpo" id="dialogo-cuerpo"></div>
+      <p class="error" id="error-dialogo" role="alert"></p>
+      <footer><button type="button" class="btn btn-claro" data-cerrar>Cancelar</button><button type="submit" class="btn btn-rojo" id="guardar-dialogo">Guardar</button></footer>
+    </form>
+  </dialog>
+
+  <div class="aviso-flota" id="aviso" role="status" aria-live="polite"></div>
+  <script src="/js/vaso.js"></script>
+  <script src="/js/editar.js"></script>
+</body>
+</html>

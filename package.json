@@ -1,0 +1,17 @@
+{
+  "name": "strong-gym-netlify",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Strong Gym Puruándiro: página promocional en Netlify con productos, fotos, videos y promociones editables por recepción.",
+  "author": "CodeDMF",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22.12" },
+  "scripts": {
+    "local": "node dev/servidor.mjs",
+    "test": "node --test test/sitio.test.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.1.4"
+  }
+}
