@@ -46,9 +46,9 @@ Cada vez que cambies algo en GitHub, Netlify vuelve a publicar solo. Lo que camb
 
 ## Publicar en GitHub Pages (gratis, sin /editar)
 
-1. En GitHub: **Settings → Pages → Source: GitHub Actions** (una sola vez).
-2. Cada cambio en `main` se publica solo en `https://darleneelmv.github.io/StrongWeb/`.
-3. En Pages no hay servidor: la página usa `public/contenido.json` (se genera con `npm run estatico` a partir de `nucleo/datos.mjs`). Para cambiar productos, fotos o contactos ahí, edita `nucleo/datos.mjs`.
+1. En GitHub: **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**.
+2. Cada cambio en `main` se publica solo en `https://darleneelmv.github.io/StrongWeb/` (el `index.html` de la raíz manda a `public/`).
+3. En Pages no hay servidor: la página usa `public/contenido.json`. Si cambias `nucleo/datos.mjs`, corre `npm run estatico` y sube el `contenido.json` nuevo.
 4. **/editar solo funciona en Netlify.**
 
 > En Netlify, lo que ya estaba guardado en Netlify Blobs se respeta: el contenido nuevo solo aparece en un sitio recién creado o cambiándolo desde /editar.
