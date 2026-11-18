@@ -469,3 +469,6 @@ a.pastilla:hover { background: rgba(255,255,255,.18); }
   .vaso-flota > div, .chispa, .sticker, .video-vacio-play, .plan-estrella::before { animation: none !important; }
   .vaso-flota > div { opacity: 1; scale: 1; }
 }
+
+/* Las palabras animadas letra por letra no se parten */
+.pal-junta { display: inline-block; white-space: nowrap; }

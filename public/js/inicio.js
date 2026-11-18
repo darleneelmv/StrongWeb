@@ -8,7 +8,11 @@
   const tactil = matchMedia('(hover: none)').matches;
   const fecha = (iso) => new Date(`${iso}T12:00:00Z`).toLocaleDateString('es-MX', { day: 'numeric', month: 'long', timeZone: 'UTC' });
   const usuarioIg = (u) => { const m = String(u || '').match(/instagram\.com\/([\w.]+)/i); return m ? m[1] : ''; };
-  const letras = (t, desde = 0) => [...t].map((l, i) => (l === ' ' ? ' ' : `<span class="letra" style="--i:${i + desde}">${esc(l)}</span>`)).join('');
+  // Letra por letra, pero cada palabra junta para que no se parta al cambiar de renglón
+  const letras = (t, desde = 0) => {
+    let i = desde;
+    return String(t).split(' ').map((p) => `<span class="pal-junta">${[...p].map((l) => `<span class="letra" style="--i:${i++}">${esc(l)}</span>`).join('')}</span>`).join(' ');
+  };
   const tituloAnimado = (t) => String(t).trim().split(/\s+/).map((w) => `<span class="pal-giro"><span>${esc(w)}</span></span>`).join(' ');
 
   function render(d) {
@@ -37,7 +41,7 @@
     $('#hero-insignias').innerHTML = insignias.join('');
     const fondo = s.hero_imagen || ((d.fotos || [])[0] || {}).imagen;
     if (fondo) $('#hero-fondo').innerHTML = `<img src="${esc(fondo)}" alt="" fetchpriority="high">`;
-    if (!(d.productos || []).length) $('.hero-acciones a[href="/productos"]').remove();
+    if (!(d.productos || []).length) $('.hero-acciones a[href="productos.html"]').remove();
     if (!(d.planes || []).length) $('.hero-acciones a[href="#planes"]').remove();
     if (ws) $('.hero-acciones').insertAdjacentHTML('beforeend', `<a class="boton boton-wa" href="${esc(wa(ws, `Hola, quiero información sobre ${nombre}.`))}" target="_blank" rel="noopener">${I.wa} WhatsApp</a>`);
 
@@ -99,7 +103,7 @@
       sec.push(`<section class="seccion" id="productos" style="background:var(--crema-2)"><div class="envoltura">
         <div class="cab-sec"><div><span class="etiqueta rev">Tienda del gym</span><h2 class="titulo rev-pal">${tituloAnimado(s.productos_titulo || 'Productos')}</h2>
           ${s.productos_texto ? `<p class="subtitulo rev" style="--i:2">${esc(s.productos_texto)}</p>` : ''}</div>
-          <a class="boton boton-oscuro rev" href="/productos">Ver todos (${prods.length}) →</a></div>
+          <a class="boton boton-oscuro rev" href="productos.html">Ver todos (${prods.length}) →</a></div>
         <div class="productos">${dest.map((p, i) => window.SG.tarjetaProducto(p, i, s)).join('')}</div>
       </div></section>`);
     }
@@ -252,11 +256,11 @@
     }
 
     // Menú: sección visible
-    const enlaces = $$('#nav a[href^="/#"]');
+    const enlaces = $$('#nav a[href^="#"]');
     const ioNav = new IntersectionObserver((ents) => ents.forEach((e) => {
-      if (e.isIntersecting) enlaces.forEach((a) => a.classList.toggle('activo', a.getAttribute('href') === `/#${e.target.id}`));
+      if (e.isIntersecting) enlaces.forEach((a) => a.classList.toggle('activo', a.getAttribute('href') === `#${e.target.id}`));
     }), { rootMargin: '-45% 0px -50% 0px' });
-    enlaces.forEach((a) => { const el = document.getElementById(a.getAttribute('href').slice(2)); if (el) ioNav.observe(el); });
+    enlaces.forEach((a) => { const el = document.getElementById(a.getAttribute('href').slice(1)); if (el) ioNav.observe(el); });
 
     // Números que cuentan al aparecer
     const ioNum = new IntersectionObserver((ents) => ents.forEach((e) => {

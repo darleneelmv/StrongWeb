@@ -65,13 +65,27 @@
   }
 
   // ---------- Datos ----------
+  // Las imágenes de ejemplo y del sitio se usan con rutas relativas para que la página funcione
+  // también dentro de una carpeta (por ejemplo usuario.github.io/StrongWeb/).
+  const relativas = (d) => JSON.parse(JSON.stringify(d).replace(/"\/(semilla|img)\//g, '"$1/'));
+
   SG.cargar = async function cargar() {
     try {
       const r = await fetch('/api/contenido', { credentials: 'same-origin' });
-      if (!r.ok) throw new Error();
-      return await r.json();
+      if (!r.ok || !/json/.test(r.headers.get('content-type') || '')) throw new Error();
+      return relativas(await r.json());
     } catch (e) {
-      return { sitio: {}, productos: [], fotos: [], videos: [], promociones: [], planes: [] };
+      // Sin servidor (GitHub Pages u otro hosting estático): contenido fijo de contenido.json
+      try {
+        const r = await fetch('contenido.json', { cache: 'no-cache' });
+        if (!r.ok) throw new Error();
+        const d = relativas(await r.json());
+        const h = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Mexico_City' });
+        d.promociones = (d.promociones || []).filter((p) => !p.vigente_hasta || p.vigente_hasta >= h);
+        return d;
+      } catch (e2) {
+        return { sitio: {}, productos: [], fotos: [], videos: [], promociones: [], planes: [] };
+      }
     }
   };
 
@@ -110,6 +124,9 @@
       document.body.appendChild(b);
     }
 
+    // En la página de inicio, los enlaces a secciones no recargan la página
+    if (pagina !== 'productos') $$('#nav a[href^="index.html#"]').forEach((a) => a.setAttribute('href', a.getAttribute('href').slice(10)));
+
     // Menú en celular
     const bMenu = $('#btn-menu');
     const menu = $('#menu-movil');
@@ -127,15 +144,23 @@
     // Pie
     const redes = SG.contactos(s).filter(([h]) => /^https?:/.test(h) && !/wa\.me/.test(h));
     $('#pie').innerHTML = `<div class="pie-fila">
-      <span class="pie-marca"><img src="/img/logo.jpg" alt="" width="40" height="40">${esc(nombre)}</span>
+      <span class="pie-marca"><img src="img/logo.jpg" alt="" width="40" height="40">${esc(nombre)}</span>
       ${redes.length ? `<div class="pie-redes">${redes.map(([h, ic, t]) => `<a href="${esc(h)}" target="_blank" rel="noopener" aria-label="${esc(t)}">${ic}</a>`).join('')}</div>` : ''}
       <span>© ${new Date().getFullYear()} ${esc(nombre)}${ciudad ? ` ${esc(ciudad)}` : ''}</span>
     </div>`;
-    if (pagina === 'productos') $$('#nav a, #menu-movil a').forEach((a) => { if (a.getAttribute('href') === '/productos') a.classList.add('actual'); });
+    if (pagina === 'productos') $$('#nav a, #menu-movil a').forEach((a) => { if (a.getAttribute('href') === 'productos.html') a.classList.add('actual'); });
   };
 
+  /** "Nombre: 438 000 0000" por línea → contactos de WhatsApp con nombre */
+  SG.personas = (s) => String(s.contactos || '').split('\n').map((l) => l.trim()).filter(Boolean).map((l) => {
+    const m = l.match(/^(.*?)[\s:·-]*(\+?[\d\s()-]{10,})$/);
+    return m ? { nombre: m[1].trim(), numero: m[2].trim() } : null;
+  }).filter((p) => p && digitos(p.numero).length >= 10);
+
   SG.contactos = (s) => [
-    s.whatsapp && [wa(s.whatsapp, `Hola, quiero información sobre ${s.nombre || 'Strong Gym'}.`), I.wa, `WhatsApp ${s.whatsapp}`],
+    ...(SG.personas(s).length
+      ? SG.personas(s).map((p) => [wa(p.numero, `Hola ${p.nombre.split(' ')[0]}, quiero información sobre ${s.nombre || 'Strong Gym'}.`), I.wa, `${p.nombre} · ${p.numero}`])
+      : [s.whatsapp && [wa(s.whatsapp, `Hola, quiero información sobre ${s.nombre || 'Strong Gym'}.`), I.wa, `WhatsApp ${s.whatsapp}`]]),
     s.telefono && [`tel:${digitos(s.telefono)}`, I.tel, `Llamar al ${s.telefono}`],
     s.email && [`mailto:${s.email}`, I.mail, s.email],
     urlOk(s.facebook) && [s.facebook, I.fb, 'Facebook'],

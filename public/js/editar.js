@@ -516,6 +516,7 @@
     ]],
     ['Contacto y horario', '', [
       { fila: [{ k: 'whatsapp', t: 'texto', label: 'WhatsApp', max: 30, ayuda: '10 dígitos. Activa los botones de "Pedir" y "Escríbenos".' }, { k: 'telefono', t: 'texto', label: 'Teléfono', max: 30 }] },
+      { k: 'contactos', t: 'area', label: 'Personas de contacto', max: 400, filas: 3, ayuda: 'Una por línea: Nombre: 438 000 0000. Salen en "Contacto" con su botón de WhatsApp.' },
       { k: 'email', t: 'texto', label: 'Correo', max: 80 },
       { k: 'direccion', t: 'area', label: 'Dirección', max: 200, filas: 2 },
       { k: 'maps_url', t: 'url', label: 'Enlace de Google Maps', ayuda: 'En Google Maps busca el gym → Compartir → Copiar enlace.' },

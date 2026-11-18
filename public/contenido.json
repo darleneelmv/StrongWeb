@@ -1,0 +1,214 @@
+{
+  "sitio": {
+    "nombre": "Strong Gym",
+    "ciudad": "Puruándiro",
+    "eslogan": "Pesas, cardio y malteadas premium con proteína de calidad en Puruándiro. Abrimos los 7 días de la semana.",
+    "descripcion": "Un gym con ambiente de comunidad para que alcances tus metas, empieces de cero o vengas de años entrenando.",
+    "hero_titulo": "STRONG GYM",
+    "hero_script": "tu cuerpo, tu fuerza",
+    "hero_imagen": "/semilla/fachada.jpg",
+    "aviso": "",
+    "marquesina": "Tu cuerpo, Tu fuerza, Disciplina, Malteadas premium, Proteína de calidad, Comunidad, Sin excusas",
+    "ventajas": "Pesas y peso libre: Máquinas, mancuernas y racks para entrenar todo el cuerpo.\nCardio: Caminadoras, bicicletas y elípticas.\nAsesoría en piso: Te enseñamos a usar los aparatos y armar tu rutina.\nMalteadas premium: Con proteína de calidad, de $60 a $70. Elige tu sabor y tu mezcla.",
+    "productos_titulo": "Nuestros productos",
+    "productos_texto": "Malteadas premium, proteínas, creatinas, pre-entrenos y snacks. Pregunta en recepción o pídelos por WhatsApp.",
+    "horario": "Lunes a viernes: 6:00 a.m. a 10:00 p.m.\nSábados: 7:00 a.m. a 5:00 p.m.\nDomingos: 7:00 a.m. a 3:00 p.m.",
+    "telefono": "438 115 2010",
+    "whatsapp": "4381152010",
+    "email": "",
+    "contactos": "Daniel Pérez Tapia: 438 115 2010\nVíctor Manuel Chávez Ramos: 438 132 1545\nJuan Diego León González: 438 131 9259",
+    "direccion": "Ana María Gallaga 255, Los Presidentes\n58502 Puruándiro, Mich.",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=Strong+Gym+Ana+Mar%C3%ADa+Gallaga+255+Puru%C3%A1ndiro",
+    "facebook": "",
+    "instagram": "https://www.instagram.com/strong_gym_mich/",
+    "tiktok": "",
+    "precio_visita": null,
+    "google_calificacion": "4.6",
+    "google_opiniones": "50"
+  },
+  "productos": [
+    {
+      "nombre": "Fresa Real",
+      "categoria": "Malteadas",
+      "precio": 60,
+      "precio_antes": null,
+      "descripcion": "Fresa congelada, hielo y nieve con la proteína que tú elijas. De $60 a $70 según tu mezcla.",
+      "imagen": "",
+      "etiqueta": "Más pedida",
+      "color": "#e0566f",
+      "destacado": true
+    },
+    {
+      "nombre": "Chocolate Extremo",
+      "categoria": "Malteadas",
+      "precio": 60,
+      "precio_antes": null,
+      "descripcion": "Chocolate con crema de cacahuate, hielo y nieve. De $60 a $70 según tu mezcla.",
+      "imagen": "",
+      "etiqueta": "",
+      "color": "#5a3220",
+      "destacado": true
+    },
+    {
+      "nombre": "Vainilla Tropical",
+      "categoria": "Malteadas",
+      "precio": 60,
+      "precio_antes": null,
+      "descripcion": "Vainilla con plátano y frutos rojos, hielo y nieve. De $60 a $70 según tu mezcla.",
+      "imagen": "",
+      "etiqueta": "",
+      "color": "#e9d3a3",
+      "destacado": true
+    },
+    {
+      "nombre": "Arma tu malteada",
+      "categoria": "Malteadas",
+      "precio": 60,
+      "precio_antes": null,
+      "descripcion": "Elige tu proteína (Carnivor, Isopure, BUM, Syntha-6, Dymatize o Muscle Milk) y agrégale fruta congelada, crema de cacahuate, hielo y nieve.",
+      "imagen": "",
+      "etiqueta": "Tú eliges",
+      "color": "#c8102e",
+      "destacado": false
+    },
+    {
+      "nombre": "Proteína en polvo",
+      "categoria": "Proteínas",
+      "precio": null,
+      "precio_antes": null,
+      "descripcion": "Syntha-6, Nitro-Tech, BUM, Isopure y otras marcas. Pregunta por sabores y presentaciones.",
+      "imagen": "/semilla/prod-proteina.jpg",
+      "etiqueta": "",
+      "color": "",
+      "destacado": true
+    },
+    {
+      "nombre": "Creatina",
+      "categoria": "Suplementos",
+      "precio": null,
+      "precio_antes": null,
+      "descripcion": "Creatina monohidratada de varias marcas, incluida BUM, para fuerza y rendimiento.",
+      "imagen": "/semilla/prod-creatina.jpg",
+      "etiqueta": "",
+      "color": "",
+      "destacado": false
+    },
+    {
+      "nombre": "Pre-entrenos",
+      "categoria": "Suplementos",
+      "precio": null,
+      "precio_antes": null,
+      "descripcion": "C4, Ghost, Fury y otras marcas para tener más energía en tus entrenamientos.",
+      "imagen": "/semilla/prod-preentreno.jpg",
+      "etiqueta": "",
+      "color": "",
+      "destacado": false
+    },
+    {
+      "nombre": "Colágeno y aminoácidos",
+      "categoria": "Suplementos",
+      "precio": null,
+      "precio_antes": null,
+      "descripcion": "Colágeno, carnitina, glutamina y Amino Energy para tu recuperación.",
+      "imagen": "/semilla/prod-colageno.jpg",
+      "etiqueta": "",
+      "color": "",
+      "destacado": false
+    },
+    {
+      "nombre": "Snacks de proteína",
+      "categoria": "Snacks",
+      "precio": null,
+      "precio_antes": null,
+      "descripcion": "Brownies Zero, galletas Soft Baked, barras de proteína y más para llevar.",
+      "imagen": "/semilla/prod-snacks.jpg",
+      "etiqueta": "",
+      "color": "",
+      "destacado": false
+    },
+    {
+      "nombre": "Agua y bebidas frías",
+      "categoria": "Bebidas",
+      "precio": null,
+      "precio_antes": null,
+      "descripcion": "En el refrigerador de recepción.",
+      "imagen": "",
+      "etiqueta": "",
+      "color": "",
+      "destacado": false
+    }
+  ],
+  "fotos": [
+    {
+      "imagen": "/semilla/fachada.jpg",
+      "titulo": "Nuestra entrada en Ana María Gallaga 255"
+    },
+    {
+      "imagen": "/semilla/malteadas.jpg",
+      "titulo": "Malteadas premium de $60 a $70"
+    },
+    {
+      "imagen": "/semilla/suplementos.jpg",
+      "titulo": "Suplementos y snacks en recepción"
+    }
+  ],
+  "videos": [],
+  "promociones": [
+    {
+      "titulo": "Mes estudiante a $350",
+      "texto": "Presenta tu credencial escolar vigente y entrena todo el mes por $350.",
+      "imagen": "/semilla/promo3.jpg",
+      "vigente_hasta": ""
+    },
+    {
+      "titulo": "Trae a un amigo",
+      "texto": "Entrenar acompañado es más fácil. Pregunta en recepción por la promoción para amigos.",
+      "imagen": "/semilla/promo2.jpg",
+      "vigente_hasta": ""
+    },
+    {
+      "titulo": "Inscríbete este mes",
+      "texto": "Ven a conocernos y empieza hoy. Pregunta por la promoción de inscripción.",
+      "imagen": "/semilla/promo1.jpg",
+      "vigente_hasta": ""
+    }
+  ],
+  "planes": [
+    {
+      "nombre": "Mes estudiantes",
+      "precio": 350,
+      "duracion": "1 mes",
+      "descripcion": "Con credencial escolar vigente.",
+      "destacado": true
+    },
+    {
+      "nombre": "Mes",
+      "precio": 390,
+      "duracion": "1 mes",
+      "descripcion": "Acceso libre todo el mes.",
+      "destacado": false
+    },
+    {
+      "nombre": "Quincena",
+      "precio": 230,
+      "duracion": "15 días",
+      "descripcion": "Acceso libre durante 15 días.",
+      "destacado": false
+    },
+    {
+      "nombre": "Semana",
+      "precio": 150,
+      "duracion": "7 días",
+      "descripcion": "Acceso libre durante 7 días.",
+      "destacado": false
+    },
+    {
+      "nombre": "Visita",
+      "precio": 40,
+      "duracion": "1 día",
+      "descripcion": "Entrena un día sin membresía.",
+      "destacado": false
+    }
+  ],
+  "actualizado": "2026-11-18T00:23:43.540Z"
+}

@@ -44,6 +44,15 @@ Cada vez que cambies algo en GitHub, Netlify vuelve a publicar solo. Lo que camb
 
 ---
 
+## Publicar en GitHub Pages (gratis, sin /editar)
+
+1. En GitHub: **Settings → Pages → Source: GitHub Actions** (una sola vez).
+2. Cada cambio en `main` se publica solo en `https://darleneelmv.github.io/StrongWeb/`.
+3. En Pages no hay servidor: la página usa `public/contenido.json` (se genera con `npm run estatico` a partir de `nucleo/datos.mjs`). Para cambiar productos, fotos o contactos ahí, edita `nucleo/datos.mjs`.
+4. **/editar solo funciona en Netlify.**
+
+> En Netlify, lo que ya estaba guardado en Netlify Blobs se respeta: el contenido nuevo solo aparece en un sitio recién creado o cambiándolo desde /editar.
+
 ## Videos
 - **Subir archivo**: MP4 o MOV de hasta 80 MB (unos 2–3 minutos en calidad normal desde el celular). Se sube por partes, así que funciona aunque el internet no sea muy rápido.
 - **Enlace**: reel o publicación de **Instagram**, video de **YouTube**, **Facebook** o **TikTok**. Para videos largos es lo mejor: cargan rápido y no ocupan espacio.

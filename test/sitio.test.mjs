@@ -54,7 +54,7 @@ test('contenido inicial con los datos reales', async () => {
   assert.deepEqual(d.planes.map((p) => [p.nombre, p.precio]), [['Mes estudiantes', 350], ['Mes', 390], ['Quincena', 230], ['Semana', 150], ['Visita', 40]]);
   assert.match(d.sitio.horario, /Domingos: 7:00 a\.m\. a 3:00 p\.m\./);
   assert.equal(d.sitio.instagram, 'https://www.instagram.com/strong_gym_mich/');
-  for (const r of ['/', '/productos', '/editar', '/semilla/gal1.jpg']) assert.equal((await fetch(base + r)).status, 200, r);
+  for (const r of ['/', '/productos', '/editar', '/semilla/fachada.jpg']) assert.equal((await fetch(base + r)).status, 200, r);
 });
 
 test('sin clave no se puede editar', async () => {
