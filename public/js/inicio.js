@@ -188,6 +188,21 @@
       </div></section>`);
     }
 
+    // ---------- Entrenadores ----------
+    const coaches = window.SG.personas(s);
+    if (coaches.length) {
+      const ini = (n) => n.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join('').toUpperCase();
+      sec.push(`<section class="seccion" id="entrenadores"><div class="envoltura">
+        <div class="cab-sec"><div><span class="etiqueta rev">Te acompañan en piso</span><h2 class="titulo rev-pal">${tituloAnimado('Entrenadores')}</h2></div>
+          <p class="rev">Escríbeles para armar tu rutina, resolver dudas o empezar desde cero.</p></div>
+        <div class="coaches">${coaches.map((p, i) => `<article class="coach rev" style="--i:${i % 3}">
+          <span class="coach-ini" aria-hidden="true">${esc(ini(p.nombre))}</span>
+          <div><h3>${esc(p.nombre)}</h3><p>Entrenador · Strong Gym</p></div>
+          <a class="boton boton-wa boton-chico" href="${esc(wa(p.numero, `Hola ${p.nombre.split(' ')[0]}, quiero información para entrenar en ${nombre}.`))}" target="_blank" rel="noopener">${I.wa} ${esc(p.numero)}</a>
+        </article>`).join('')}</div>
+      </div></section>`);
+    }
+
     // ---------- Llamado con stickers ----------
     const stickers = ['Tu cuerpo', 'Tu fuerza', primera !== undefined ? `Abrimos ${nums[nums.length - 1][0]}${nums[nums.length - 1][1]}` : 'Sin excusas', 'Barra de proteína'];
     const POS_ST = [['6%', '18%', '-8deg'], ['80%', '14%', '7deg'], ['10%', '78%', '5deg'], ['76%', '80%', '-6deg']];

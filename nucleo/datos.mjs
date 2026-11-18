@@ -247,7 +247,7 @@ export function contenidoInicial() {
       productos_titulo: 'Nuestros productos',
       productos_texto: 'Malteadas premium, proteínas, creatinas, pre-entrenos y snacks. Pregunta en recepción o pídelos por WhatsApp.',
       horario: 'Lunes a viernes: 6:00 a.m. a 10:00 p.m.\nSábados: 7:00 a.m. a 5:00 p.m.\nDomingos: 7:00 a.m. a 3:00 p.m.',
-      telefono: '438 115 2010', whatsapp: '4381152010', email: '',
+      telefono: '', whatsapp: '', email: '',
       contactos: 'Daniel Pérez Tapia: 438 115 2010\nVíctor Manuel Chávez Ramos: 438 132 1545\nJuan Diego León González: 438 131 9259',
       direccion: 'Ana María Gallaga 255, Los Presidentes\n58502 Puruándiro, Mich.',
       maps_url: 'https://www.google.com/maps/search/?api=1&query=Strong+Gym+Ana+Mar%C3%ADa+Gallaga+255+Puru%C3%A1ndiro',

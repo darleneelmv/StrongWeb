@@ -158,9 +158,8 @@
   }).filter((p) => p && digitos(p.numero).length >= 10);
 
   SG.contactos = (s) => [
-    ...(SG.personas(s).length
-      ? SG.personas(s).map((p) => [wa(p.numero, `Hola ${p.nombre.split(' ')[0]}, quiero información sobre ${s.nombre || 'Strong Gym'}.`), I.wa, `${p.nombre} · ${p.numero}`])
-      : [s.whatsapp && [wa(s.whatsapp, `Hola, quiero información sobre ${s.nombre || 'Strong Gym'}.`), I.wa, `WhatsApp ${s.whatsapp}`]]),
+    s.whatsapp && [wa(s.whatsapp, `Hola, quiero información sobre ${s.nombre || 'Strong Gym'}.`), I.wa, `WhatsApp ${s.whatsapp}`],
+    ...SG.personas(s).map((p) => [wa(p.numero, `Hola ${p.nombre.split(' ')[0]}, quiero información para entrenar en ${s.nombre || 'Strong Gym'}.`), I.wa, `${p.nombre} (entrenador)`]),
     s.telefono && [`tel:${digitos(s.telefono)}`, I.tel, `Llamar al ${s.telefono}`],
     s.email && [`mailto:${s.email}`, I.mail, s.email],
     urlOk(s.facebook) && [s.facebook, I.fb, 'Facebook'],
